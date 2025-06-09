@@ -1,4 +1,4 @@
-# Encuestas
+# Brain Quiz
 ---
 
 ## Instalación
@@ -39,7 +39,7 @@ Crear una cuenta en [GitHub](https://github.com/).
 Abrir una terminal dentro de la carpeta donde queremos clonar el repositorio y ejecutar el siguiente comando:
 
 ```bash
-git clone https://github.com/Nayerlinm/encuestas
+git clone https://github.com/Nayerlinm/brainquiz
 ```
 
 #### Abrir la carpeta en VsCode
