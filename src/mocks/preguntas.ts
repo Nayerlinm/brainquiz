@@ -54,17 +54,21 @@ const preguntasTitulos: Record<number, Partial<TPregunta>> = {
 
 const mockPreguntasArray: TPregunta[] = Array.from(
  { length: 12 },
- (_, index) => ({
-  id: index + 1,
-  estatus: true,
-  titulo: preguntasTitulos[index + 1]?.titulo ?? '',
-  preguntaOpcion: preguntaOpcion[index + 1]?.map((idOpcion) => ({
-   idOpcion,
-   idPregunta: index + 1,
-  })),
-  createAt: new Date(),
-  updateAt: new Date(),
- })
+ (_, index) => {
+  const idPregunta = index + 1;
+
+  return {
+   id: idPregunta,
+   estatus: true,
+   titulo: preguntasTitulos[idPregunta]?.titulo ?? '',
+   preguntaOpcion: preguntaOpcion[idPregunta]?.map((idOpcion) => ({
+    idOpcion,
+    idPregunta,
+   })),
+   createAt: new Date(),
+   updateAt: new Date(),
+  };
+ }
 );
 
 export const mockPreguntas: TPregunta[] = mockPreguntasArray;
