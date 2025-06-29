@@ -21,7 +21,7 @@ export const mockEnlacesContacto: TFooterLinks = [
  },
  {
   icon: Phone,
-  name: '+1 (555) 123-4567',
+  name: '0414-1387817 / 0412-7610787',
   href: '/',
  },
 ];
