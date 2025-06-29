@@ -10,7 +10,7 @@ function EncuestaListPage() {
   <React.Fragment>
    <div className="my-10 space-y-10">
     <div>
-     <TypographyH1>Encuestas</TypographyH1>
+     <TypographyH1 className="mb-2">Encuestas</TypographyH1>
      <TypographyMuted>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
       repudiandae!

@@ -18,7 +18,7 @@
 
  --radius-xl: calc(var(--radius) + 4px);
 
- --color-background: var(--background);
+ --color-background: var(--color-neutral-100);
 
  --color-foreground: var(--foreground);
 

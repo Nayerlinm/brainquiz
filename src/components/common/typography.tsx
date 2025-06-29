@@ -61,6 +61,35 @@ export function TypographyH4({
  );
 }
 
+export function TypographyH5({
+ children,
+ className,
+}: { children: React.ReactNode; className?: string }) {
+ return (
+  <h5
+   className={cn('scroll-m-20 text-lg font-semibold tracking-tight', className)}
+  >
+   {children}
+  </h5>
+ );
+}
+
+export function TypographyH6({
+ children,
+ className,
+}: { children: React.ReactNode; className?: string }) {
+ return (
+  <h6
+   className={cn(
+    'scroll-m-20 text-base font-semibold tracking-tight',
+    className
+   )}
+  >
+   {children}
+  </h6>
+ );
+}
+
 export function TypographyP({
  children,
  className,

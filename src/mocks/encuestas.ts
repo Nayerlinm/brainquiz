@@ -4,6 +4,7 @@ export const mockEncuentas: TEncuesta[] = [
  {
   id: 1,
   estatus: true,
+  imagen: '/encuestas/1.png',
   puntaje_maximo: 10,
   titulo: 'Fundamentos de Programación',
   descripcion: 'Nivel: Básico/Intermedio',
@@ -32,6 +33,7 @@ export const mockEncuentas: TEncuesta[] = [
  {
   id: 2,
   estatus: true,
+  imagen: '/encuestas/2.jpg',
   puntaje_maximo: 10,
   titulo: 'Desarrollo Web y Prácticas',
   descripcion: 'Nivel: Intermedio',
@@ -60,6 +62,7 @@ export const mockEncuentas: TEncuesta[] = [
  {
   id: 3,
   estatus: true,
+  imagen: '/encuestas/3.jpg',
   puntaje_maximo: 10,
   titulo: 'Carrera y Tendencias',
   descripcion: 'Nivel: General',

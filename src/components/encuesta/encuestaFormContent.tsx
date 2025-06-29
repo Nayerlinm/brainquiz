@@ -50,7 +50,7 @@ function EncuestaFormContent({ preguntas, opciones }: Props) {
   <div className="space-y-6 flex flex-col gap-10 my-10">
    {preguntas.map((pregunta) => (
     <div className="flex flex-col gap-4 border-b pb-6" key={pregunta.id}>
-     <TypographyH3>{pregunta.titulo}</TypographyH3>
+     <TypographyH3 className="mb-4">{pregunta.titulo}</TypographyH3>
      <RadioGroup onValueChange={handlePeguntaOpcion}>
       {opciones
        .filter((opcion) =>
@@ -61,7 +61,7 @@ function EncuestaFormContent({ preguntas, opciones }: Props) {
        .map((opcion) => (
         <div
          key={`${pregunta.id}-${opcion.id}`}
-         className="flex items-center space-x-2 cursor-pointer"
+         className="flex items-center space-x-2 mb-2 cursor-pointer"
         >
          <RadioGroupItem
           id={`${pregunta.id}-${opcion.id}`}

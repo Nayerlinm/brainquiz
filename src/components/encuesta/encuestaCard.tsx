@@ -4,7 +4,11 @@ import { ArrowRight } from 'lucide-react';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { TEncuesta } from '../../models';
-import { TypographyH4, TypographySmall } from '../common/typography';
+import {
+ TypographyH4,
+ TypographyMuted,
+ TypographySmall,
+} from '../common/typography';
 import {
  Card,
  CardAction,
@@ -17,7 +21,7 @@ import { Progress } from '../ui/progress';
 import UsuarioPreRegisterModal from '../usuario/usuarioPreRegisterModal';
 
 function EncuestaCard(encuesta: TEncuesta) {
- const { titulo, descripcion, puntaje_maximo, id, publico } = encuesta;
+ const { titulo, descripcion, puntaje_maximo, id, publico, imagen } = encuesta;
  const [isOpen, setIsOpen] = React.useState(false);
  const { usuario } = React.useContext(UsuarioContext);
  const { getResultadoPorEncuesta, getResultadoPorId } =
@@ -59,16 +63,30 @@ function EncuestaCard(encuesta: TEncuesta) {
  return (
   <React.Fragment>
    <Card
-    className={cn([puntajeUsuario > 2.5 && 'cursor-pointer'])}
     onClick={handleClick}
+    className={cn([
+     puntajeUsuario <= 2.5 && 'cursor-pointer',
+     'relative bg-secondary/50 drop-shadow-accent backdrop-blur-3xl border-transparent overflow-hidden',
+    ])}
    >
+    {!imagen ? null : (
+     <img
+      height={400}
+      alt={titulo}
+      loading="lazy"
+      className="max-h-40 object-cover mx-6 rounded-md"
+      src={imagen ?? 'https://placehold.co/600x400'}
+     />
+    )}
     <CardHeader>
      <CardTitle>
       <TypographyH4 className="line-clamp-1 text-ellipsis">
        {titulo}
       </TypographyH4>
      </CardTitle>
-     <CardDescription>{descripcion}</CardDescription>
+     <CardDescription>
+      <TypographyMuted>{descripcion}</TypographyMuted>
+     </CardDescription>
      <CardAction>{accesoIcon}</CardAction>
     </CardHeader>
     {puntajeUsuario === 0 ? (
@@ -90,6 +108,8 @@ function EncuestaCard(encuesta: TEncuesta) {
       </TypographySmall>
      </CardFooter>
     )}
+    <span className="absolute -top-20 right-0 h-36 w-36 bg-amber-300/30 blur-3xl rounded-full -z-10" />
+    <span className="absolute -bottom-20 right-10 h-36 w-36 bg-sky-300/30 blur-3xl rounded-full -z-10" />
    </Card>
    <UsuarioPreRegisterModal open={isOpen} onOpenChange={setIsOpen} />
   </React.Fragment>

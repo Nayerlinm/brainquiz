@@ -1,3 +1,4 @@
+export * from './footer';
 export * from './opcion';
 export * from './usuario';
 export * from './encuesta';

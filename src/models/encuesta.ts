@@ -3,6 +3,7 @@ import { encuestaPreguntaDefinition } from './encuestaPregunta';
 
 export const encuestaDefinition = z.object({
  id: z.number(),
+ imagen: z.string().optional(),
  titulo: z.string(),
  descripcion: z.string(),
  puntaje_maximo: z.number(),
